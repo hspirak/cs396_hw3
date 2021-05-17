@@ -100,7 +100,7 @@ document.querySelector("#newDoc").onclick = ev => {
 
     <!-- Ordering -->
     <label for="ordering">Ordering</label>
-    <input type="text" id="ordering">
+    <input type="text" id="ordering" value="${doctors.length+1}">
 
     <!-- Image -->
     <label for="image_url">Image</label>
@@ -205,7 +205,7 @@ const processSave = ev => {
 
 const processDelete = ev => {
     console.log("WOW")
-    if (!window.confirm("Do you really want to delete this doctor?")) {
+    if (!window.confirm(`Are you sure you want to delete ${currDoc.name}?`)) {
         document.querySelector("#doctor").innerHTML = `
         <h2>${currDoc.name}</h2>
         <p>Seasons: ${currDoc.seasons}</p>
